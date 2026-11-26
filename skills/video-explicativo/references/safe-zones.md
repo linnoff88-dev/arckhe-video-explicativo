@@ -1,7 +1,7 @@
 # Safe zones 9:16 (Shorts / Reels / TikTok)
 
 No vertical, a **UI da rede social cobre faixas fixas** do vídeo. Conteúdo crítico (texto, número, logo, dado)
-**não pode cair** nessas faixas, senão fica escondido atrás dos botões/legenda do app. O 16:9 não tem esse
+**nêo pode cair** nessas faixas, senêo fica escondido atrás dos botões/legenda do app. O 16:9 nêo tem esse
 problema (a UI do player fica fora do frame) — **isto é só para 9:16**.
 
 ## O mapa (frame 1080×1920)
@@ -17,7 +17,7 @@ problema (a UI do player fica fora do frame) — **isto é só para 9:16**.
 
 Arranjo que funcionou bem nas redes:
 
-1. **MÍDIA/ILUSTRAÇÃO no TOPO** — imagem (ou ícone SVG) como **faixa de topo** (~34% da altura), **entrando da
+1. **MÍDIA/ILUSTRAÇêO no TOPO** — imagem (ou ícone SVG) como **faixa de topo** (~34% da altura), **entrando da
    direita→esquerda**. Sem imagem/servidor → ícone **SVG** no topo (fallback; ver clips-midia.md).
 2. **MENSAGEM no MEIO** — texto/número/dado centralizados verticalmente (altura confortável de leitura).
 3. **BASE (~360px) e LATERAL-DIREITA livres** — onde o app põe legenda/@perfil e os botões.
@@ -36,14 +36,14 @@ Nos overrides `body.v` de `scripts/composition-template.mjs`:
 
 ## Princípios
 
-1. **Topo-esquerda e centro são sagrados; base e direita-baixo são "emprestados" ao app.**
+1. **Topo-esquerda e centro sêo sagrados; base e direita-baixo sêo "emprestados" ao app.**
 2. **Caption curta** no 9:16 — quanto menor, menos risco de bater na coluna de botões.
 3. **Logo/CTA/dado-chave** ficam no terço superior/central, nunca na base.
-4. O mesmo conteúdo no 16:9 usa o frame inteiro; só o ramo `body.v` muda — não mexa no layout horizontal.
+4. O mesmo conteúdo no 16:9 usa o frame inteiro; só o ramo `body.v` muda — nêo mexa no layout horizontal.
 
-## Variante: cena é 1 FOTO full-bleed (não SVG/tipografia) — REGRA
+## Variante: cena é 1 FOTO full-bleed (nêo SVG/tipografia) — REGRA
 
-O template oficial (`composition-template.mjs`) compõe cenas em SVG/CSS/tipografia, então media (quando existe) é
+O template oficial (`composition-template.mjs`) compõe cenas em SVG/CSS/tipografia, entêo media (quando existe) é
 um clip *adicional* — nunca a cena inteira. Mas alguns projetos (geradores caseiros, fora do `composition-template.mjs`)
 usam **1 foto de fundo full-bleed por cena** (`<img class="scene-img">` absoluta, `object-fit:cover` cobrindo o
 frame inteiro) + texto por cima — caso real: `websites-morrem`, `claude-5videos`, `monako-glasses`.
@@ -52,22 +52,22 @@ frame inteiro) + texto por cima — caso real: `websites-morrem`, `claude-5video
 `1080→1920` e encolher `font-size`). A imagem geralmente é gerada em 16:9 (ex. flux2-klein a 1280×720). Com
 `object-fit:cover` mantido, ela **escala até a altura bater** (720→1920 ≈ 2,67×) e **corta as laterais** — sobra
 só ~31% da largura original, ampliada 2,67× (perda de nitidez + corte imprevisível do conteúdo). Isso já
-aconteceu em produção (`websites-morrem`) e passou despercebido até alguém checar o print.
+aconteceu em produçêo (`websites-morrem`) e passou despercebido até alguém checar o print.
 
-**O que fazer em vez disso — gerador 9:16 dedicado** (não um patch do 16:9; gera o `index-916.html` do zero, lendo
+**O que fazer em vez disso — gerador 9:16 dedicado** (nêo um patch do 16:9; gera o `index-916.html` do zero, lendo
 os mesmos `assets/audio/sN.wav` + `assets/txt/sN.txt`/título do vídeo):
 
-1. **Imagem CONTIDA, não cortada.** Um `<div class="img-wrap">` de altura fixa (ex. `top:460px;height:480px` ou
+1. **Imagem CONTIDA, nêo cortada.** Um `<div class="img-wrap">` de altura fixa (ex. `top:460px;height:480px` ou
    `top:230px;height:608px`, dependendo do resto do layout) com a foto dentro em `object-fit:cover` — como a
-   altura do wrap já respeita a proporção ~16:9 da foto, o corte fica desprezível (não os 2,67× do full-bleed).
+   altura do wrap já respeita a proporçêo ~16:9 da foto, o corte fica desprezível (nêo os 2,67× do full-bleed).
 2. **Título do vídeo GRANDE, fixo no topo, 2 linhas** (ver regra `TITLE` acima) — usa o `title`/`subtitle` que o
-   gerador já tem por vídeo, sem trabalho extra. Sora 800, ~56–72px (menor que os 104–118px do padrão porque aqui
-   o subtitle tende a ser uma frase inteira, não só o gancho).
-3. **Legenda da cena abaixo da imagem**, dentro do miolo seguro — **não** esconder (diferente do ponto 4 acima):
-   nesse estilo a legenda é a única portadora do fato específico da cena (não há tipografia/gráfico próprio como
+   gerador já tem por vídeo, sem trabalho extra. Sora 800, ~56–72px (menor que os 104–118px do padrêo porque aqui
+   o subtitle tende a ser uma frase inteira, nêo só o gancho).
+3. **Legenda da cena abaixo da imagem**, dentro do miolo seguro — **nêo** esconder (diferente do ponto 4 acima):
+   nesse estilo a legenda é a única portadora do fato específico da cena (nêo há tipografia/gráfico próprio como
    no template oficial). Dê folga generosa: projetos reais chegam a **~240 caracteres** numa cena só — teste
-   sempre com o texto mais longo do projeto antes de bater o render final, não só com a cena 1.
-4. **Base (~420px) só com decoração ambient** (barra de progresso fina na borda, por ex.) — nunca badge/dado
+   sempre com o texto mais longo do projeto antes de bater o render final, nêo só com a cena 1.
+4. **Base (~420px) só com decoraçêo ambient** (barra de progresso fina na borda, por ex.) — nunca badge/dado
    numérico aí (o layout antigo do `monako-glasses` tinha `data-badge{top:50px}` — dentro da zona de TOPO
    reservada; mova pro miolo também).
 

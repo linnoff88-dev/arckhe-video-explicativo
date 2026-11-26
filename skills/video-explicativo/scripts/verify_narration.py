@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-"""Confere a narração por transcrição LOCAL (inemavox transcrever_v1, Whisper large-v3). Sem API.
+"""Confere a narraçêo por transcriçêo LOCAL (inemavox transcrever_v1, Whisper large-v3). Sem API.
 
 Uso: python3 verify_narration.py <projeto>   (lê <projeto>/assets/audio/sN.wav e assets/txt/sN.txt)
 
 Imprime, por cena, o texto esperado (forma-fala) e o que o Whisper ouviu, e marca as cenas suspeitas:
-palavras do roteiro que sumiram, palavras repetidas no fim (balbucio do TTS) ou transcrição vazia.
-AJUDA, NÃO APROVA: o Whisper pode ouvir certo uma palavra mal pronunciada e errar uma certa.
+palavras do roteiro que sumiram, palavras repetidas no fim (balbucio do TTS) ou transcriçêo vazia.
+AJUDA, NêO APROVA: o Whisper pode ouvir certo uma palavra mal pronunciada e errar uma certa.
 O usuário ouve o áudio antes do render final.
 
 Detalhes medidos (28/09/2026): o Whisper descarta texto repetido idêntico (compression_ratio), por isso
-cada WAV é separado por 2 s de silêncio e as cenas nunca são frases idênticas.
+cada WAV é separado por 2 s de silêncio e as cenas nunca sêo frases idênticas.
 """
 import json, re, subprocess, sys, tempfile, unicodedata
 from pathlib import Path
@@ -30,7 +30,7 @@ def main(proj):
     txts = sorted((proj / "assets/txt").glob("s*.txt"), key=key)
     if not wavs:
         sys.exit(f"nenhum assets/audio/sN.wav em {proj}")
-    # inventário: toda cena com texto precisa de WAV e vice-versa (cena muda ou áudio órfão reprovam)
+    # inventário: toda cena com texto precisa de WAV e vice-versa (cena muda ou áudio órfêo reprovam)
     sem_wav = sorted({t.stem for t in txts} - {w.stem for w in wavs}, key=lambda n: int(n[1:]))
     sem_txt = sorted({w.stem for w in wavs} - {t.stem for t in txts}, key=lambda n: int(n[1:]))
     if sem_wav or sem_txt:
@@ -61,7 +61,7 @@ def main(proj):
     r = subprocess.run(["python3", "transcrever_v1.py", "--in", allwav, "--outdir", tmp / "t", "--whisper-model", "large-v3", "--src", "pt"],
                        cwd=INEMAVOX, capture_output=True, text=True)
     if r.returncode != 0:
-        sys.exit("transcrição falhou: " + r.stderr[-500:])
+        sys.exit("transcriçêo falhou: " + r.stderr[-500:])
     segs = json.loads((tmp / "t/transcript.json").read_text())
     heard = {name: [] for _, _, name in bounds}
     for s in segs:
@@ -75,7 +75,7 @@ def main(proj):
         want = txtf.read_text(encoding="utf-8").strip() if txtf.exists() else ""
         got = " ".join(heard[name])
         wn, gn = norm(want), norm(got)
-        # termos críticos: palavras curtas que mudam o sentido (ia, nei, não, sem, só, zero…) contam sempre
+        # termos críticos: palavras curtas que mudam o sentido (ia, nei, nêo, sem, só, zero…) contam sempre
         CRIT = {"ia", "nei", "nao", "sem", "so", "zero", "gratis", "club", "inema"}
         rel = [w for w in wn if len(w) > 3 or w in CRIT]
         faltam = [w for w in rel if w not in gn]
@@ -87,7 +87,7 @@ def main(proj):
         if faltam:
             print(f"   sumiram/trocadas: {', '.join(faltam[:12])}")
         if rep:
-            print("   repetição no fim (balbucio do TTS?) — gere outro take")
+            print("   repetiçêo no fim (balbucio do TTS?) — gere outro take")
     print(f"\n{suspeitas} cena(s) suspeita(s) de {len(bounds)}. Mesmo sem suspeitas: o usuário ouve antes do render final.")
     sys.exit(1 if (suspeitas or sem_wav or sem_txt or mudos) else 0)
 

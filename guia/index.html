@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>video-explicativo — do assunto ao vídeo narrado, sem chave de API</title>
-<meta content="Skill que cria vídeos explicativos completos em PT-BR (HTML→MP4 via HyperFrames) a partir de um assunto: roteiro, narração TTS local, cenas animadas dark premium, captions e CTA do INEMA.CLUB, em 16:9 e 9:16." name="description"/>
+<meta content="Skill que cria vídeos explicativos completos em PT-BR (HTML→MP4 via HyperFrames) a partir de um assunto: roteiro, narraçêo TTS local, cenas animadas dark premium, captions e CTA do INEMA.CLUB, em 16:9 e 9:16." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/>
@@ -117,7 +117,7 @@
 <div>
 <span class="chip">Skill · Claude Code · HTML→MP4</span>
 <h1>Do assunto ao <span class="amb">vídeo narrado</span>, sem chave de API.</h1>
-<p class="lead">Você dá um assunto. A skill escreve o roteiro, grava a locução, anima as cenas e renderiza os MP4 em 16:9 e 9:16 — tudo na sua máquina.</p>
+<p class="lead">Você dá um assunto. A skill escreve o roteiro, grava a locuçêo, anima as cenas e renderiza os MP4 em 16:9 e 9:16 — tudo na sua máquina.</p>
 <div class="cta">
 <a class="btn" href="#guia">Começar o guia</a>
 <a class="btn ghost" href="https://github.com/inematds/video-explicativo" rel="noopener" target="_blank">Ver no GitHub</a>
@@ -129,31 +129,31 @@
 <section id="oque"><div class="wrap">
 <span class="chip">O que é</span>
 <h2>Uma skill que empacota o pipeline inteiro de vídeo explicativo</h2>
-<p class="sub">Não é um gerador de vídeo por IA. É um pipeline determinístico: HTML animado + Chrome headless + FFmpeg, orquestrado pelo <a href="https://github.com/heygen-com/hyperframes" rel="noopener" target="_blank">HyperFrames</a>, com narração TTS local. O resultado é sempre PT-BR, dark premium âmbar, e termina na CTA do INEMA.CLUB.</p>
+<p class="sub">Nêo é um gerador de vídeo por IA. É um pipeline determinístico: HTML animado + Chrome headless + FFmpeg, orquestrado pelo <a href="https://github.com/heygen-com/hyperframes" rel="noopener" target="_blank">HyperFrames</a>, com narraçêo TTS local. O resultado é sempre PT-BR, dark premium âmbar, e termina na CTA do INEMA.CLUB.</p>
 <div class="grid g3">
-<div class="card"><h3>🔒 100% local, sem chave de API</h3><p>Chrome headless + FFmpeg renderizam o vídeo; a narração sai do inemavox local (engine <code>chatterbox</code>, voz <code>nei</code>) com Kokoro <code>pf_dora</code> como fallback. Nada sai da máquina.</p></div>
-<div class="card"><h3>📐 Data-driven, nº de cenas dinâmico</h3><p>O gerador lê o array <code>SCENES[]</code>: uma entrada por beat do roteiro. Range saudável 4–12 cenas de conteúdo — o assunto decide, não um template travado.</p></div>
-<div class="card"><h3>📱 16:9 e 9:16 na mesma base</h3><p>O mesmo gerador escreve os dois formatos (<code>--vertical</code>: versão vertical do explicativo — reel de verdade é no makeshorts + explicavideos 9:16), com safe zones da UI dos apps e título persistente de 2 linhas no vertical.</p></div>
+<div class="card"><h3>🔒 100% local, sem chave de API</h3><p>Chrome headless + FFmpeg renderizam o vídeo; a narraçêo sai do inemavox local (engine <code>chatterbox</code>, voz <code>nei</code>) com Kokoro <code>pf_dora</code> como fallback. Nada sai da máquina.</p></div>
+<div class="card"><h3>📐 Data-driven, nº de cenas dinâmico</h3><p>O gerador lê o array <code>SCENES[]</code>: uma entrada por beat do roteiro. Range saudável 4–12 cenas de conteúdo — o assunto decide, nêo um template travado.</p></div>
+<div class="card"><h3>📱 16:9 e 9:16 na mesma base</h3><p>O mesmo gerador escreve os dois formatos (<code>--vertical</code>: versêo vertical do explicativo — reel de verdade é no makeshorts + explicavideos 9:16), com safe zones da UI dos apps e título persistente de 2 linhas no vertical.</p></div>
 </div>
 </div></section>
 <section id="fluxo"><div class="wrap">
 <span class="chip">Como funciona</span>
 <h2>Oito etapas, sempre nesta ordem</h2>
-<p class="sub">O timing é fonte única: cada cena declara a duração REAL do seu WAV (medida com <code>ffprobe</code>), e o gerador deriva dali tanto os <code>data-start/duration</code> quanto os tempos dos tweens — áudio e animação nunca desencontram.</p>
+<p class="sub">O timing é fonte única: cada cena declara a duraçêo REAL do seu WAV (medida com <code>ffprobe</code>), e o gerador deriva dali tanto os <code>data-start/duration</code> quanto os tempos dos tweens — áudio e animaçêo nunca desencontram.</p>
 <div class="flow">
 <span>Roteiro</span><span class="arr">→</span>
-<span>Revisão de texto</span><span class="arr">→</span>
+<span>Revisêo de texto</span><span class="arr">→</span>
 <span>Projeto</span><span class="arr">→</span>
 <span>Fontes</span><span class="arr">→</span>
-<span>Narração</span><span class="arr">→</span>
-<span>Composição</span><span class="arr">→</span>
+<span>Narraçêo</span><span class="arr">→</span>
+<span>Composiçêo</span><span class="arr">→</span>
 <span>Validar</span><span class="arr">→</span>
 <span>Render</span>
 </div>
 <div class="grid g3" style="margin-top:30px">
-<div class="card"><h3>✍️ Texto (1–2)</h3><p>Roteiro com gancho na cena 1 e revisão em duas formas por frase: <b>tela</b> (PT-BR acentuado, inglês na grafia original) e <b>fala</b> (siglas expandidas, inglês fonético — <code>deploy</code> → "deplói").</p></div>
+<div class="card"><h3>✍️ Texto (1–2)</h3><p>Roteiro com gancho na cena 1 e revisêo em duas formas por frase: <b>tela</b> (PT-BR acentuado, inglês na grafia original) e <b>fala</b> (siglas expandidas, inglês fonético — <code>deploy</code> → "deplói").</p></div>
 <div class="card"><h3>🎙️ Áudio (3–5)</h3><p>Projeto criado em <code>~/projetos/output/&lt;nome&gt;/</code>, fontes baixadas como <code>.woff2</code> local, e um WAV por cena gerado pelo <code>narration.sh</code>.</p></div>
-<div class="card"><h3>🎞️ Vídeo (6–8)</h3><p>Composição a partir do vocabulário de movimento <code>M.*</code>, lint + inspect de layout, render em <code>draft</code> para conferir e <code>high</code> para entregar.</p></div>
+<div class="card"><h3>🎞️ Vídeo (6–8)</h3><p>Composiçêo a partir do vocabulário de movimento <code>M.*</code>, lint + inspect de layout, render em <code>draft</code> para conferir e <code>high</code> para entregar.</p></div>
 </div>
 </div></section>
 <section id="pre"><div class="wrap">
@@ -161,7 +161,7 @@
 <h2>O que precisa estar na máquina</h2>
 <p class="sub">Tudo roda local. Se algo falhar, <code>npx hyperframes doctor</code> aponta o que está faltando.</p>
 <div class="grid g3">
-<div class="card"><h3>Node 22+ e FFmpeg</h3><p>FFmpeg em <code>C:\ffmpeg\bin</code>. No git-bash use sempre <code>-nostdin</code>, senão o comando sai com exit 0 sem gerar arquivo.</p><pre><span class="c"># confira a versão</span>
+<div class="card"><h3>Node 22+ e FFmpeg</h3><p>FFmpeg em <code>C:\ffmpeg\bin</code>. No git-bash use sempre <code>-nostdin</code>, senêo o comando sai com exit 0 sem gerar arquivo.</p><pre><span class="c"># confira a versêo</span>
 <span class="k">node</span> -v
 <span class="k">ffmpeg</span> -nostdin -version</pre></div>
 <div class="card"><h3>Chrome headless (HyperFrames)</h3><p>O HyperFrames renderiza o HTML num Chrome headless próprio — baixe-o uma vez.</p><pre><span class="c"># baixa o browser do HyperFrames</span>
@@ -172,42 +172,42 @@
 <div class="card"><h3>TTS: inemavox local (voz nei)</h3><p>Default da casa — <b>pede GPU</b>. <code>python3</code> do sistema roda o <code>tts_direct.py</code>; o env conda <code>chatterbox</code> é chamado internamente para a transferência de timbre.</p><pre><span class="c"># fallback opcional (Kokoro pf_dora)</span>
 <span class="k">pip</span> install kokoro-onnx soundfile</pre></div>
 </div>
-<h3 style="margin-top:2.2rem">Não tem GPU? Dá pra rodar tudo assim mesmo</h3>
+<h3 style="margin-top:2.2rem">Nêo tem GPU? Dá pra rodar tudo assim mesmo</h3>
 <p class="sub">O render (Chrome headless + FFmpeg) <b>nunca</b> precisou de GPU. Só duas peças do fluxo default puxam hardware extra — e as duas têm substituto direto.</p>
 <div class="grid g3">
-<div class="card"><h3>🎙️ Narração → edge-tts</h3><p>Sintetiza na nuvem da Microsoft, sem chave e sem modelo local. <b>Liste e escute as vozes antes</b> de gerar o vídeo inteiro — trocar de voz no meio é retrabalho.</p><pre><span class="c"># instalar e ver as vozes PT-BR</span>
+<div class="card"><h3>🎙️ Narraçêo → edge-tts</h3><p>Sintetiza na nuvem da Microsoft, sem chave e sem modelo local. <b>Liste e escute as vozes antes</b> de gerar o vídeo inteiro — trocar de voz no meio é retrabalho.</p><pre><span class="c"># instalar e ver as vozes PT-BR</span>
 <span class="k">pip</span> install edge-tts
 <span class="k">edge-tts</span> --list-voices | grep pt-BR
 
 <span class="c"># amostra de 1 frase, para escutar</span>
 <span class="k">edge-tts</span> --voice pt-BR-FranciscaNeural \
   --text "Teste de voz." --write-media amostra.mp3</pre></div>
-<div class="card"><h3>🔌 Narração offline → Kokoro</h3><p>Modelo ONNX pequeno, roda em <b>CPU</b>, sem internet. Vozes PT: <code>pf_dora</code> (F), <code>pm_alex</code> e <code>pm_santa</code> (M). Mesma regra: gere uma frase com cada candidata e escolha ouvindo.</p><pre><span class="k">pip</span> install kokoro-onnx soundfile
+<div class="card"><h3>🔌 Narraçêo offline → Kokoro</h3><p>Modelo ONNX pequeno, roda em <b>CPU</b>, sem internet. Vozes PT: <code>pf_dora</code> (F), <code>pm_alex</code> e <code>pm_santa</code> (M). Mesma regra: gere uma frase com cada candidata e escolha ouvindo.</p><pre><span class="k">pip</span> install kokoro-onnx soundfile
 
 <span class="c"># o timing do vídeo vem do áudio real</span>
 <span class="k">ffprobe</span> -v error -show_entries format=duration \
   -of csv=p=0 assets/audio/s1.wav</pre></div>
-<div class="card"><h3>🖼️ Imagens → Agnes AI</h3><p>No lugar do flux2-klein (difusão local, GPU): o CLI <code>imagens-agnes</code> chama a API da Agnes — <b>US$ 0, sem créditos</b>, nada roda na sua máquina. Prompt <b>em inglês</b> (PT apanha do filtro), no máx. 2 referências, e baixe na hora (a URL expira).</p><pre><span class="k">cd</span> ~/projetos/imagens-agnes
+<div class="card"><h3>🖼️ Imagens → Agnes AI</h3><p>No lugar do flux2-klein (difusêo local, GPU): o CLI <code>imagens-agnes</code> chama a API da Agnes — <b>US$ 0, sem créditos</b>, nada roda na sua máquina. Prompt <b>em inglês</b> (PT apanha do filtro), no máx. 2 referências, e baixe na hora (a URL expira).</p><pre><span class="k">cd</span> ~/projetos/imagens-agnes
 <span class="k">python3</span> gerar.py "dark premium abstract \
   data landscape, amber accent" \
   --ratio 16:9 --size 2K -o s3.png</pre></div>
 </div>
-<p class="sub" style="margin-top:1rem">Sem Agnes e sem GPU, o <b>fallback SVG</b> continua valendo: o house-style já é vetorial/CSS, imagem é reforço e não requisito. Detalhes completos em <code>references/sem-gpu.md</code>.</p>
+<p class="sub" style="margin-top:1rem">Sem Agnes e sem GPU, o <b>fallback SVG</b> continua valendo: o house-style já é vetorial/CSS, imagem é reforço e nêo requisito. Detalhes completos em <code>references/sem-gpu.md</code>.</p>
 </div></section>
 <section id="guia"><div class="wrap">
 <span class="chip">Guia de uso · passo a passo</span>
 <h2>Do assunto ao MP4</h2>
-<p class="sub">Os comandos abaixo são os reais da skill. Todo o conteúdo — projeto, assets, áudios, <code>index.html</code> e os MP4 finais — vive numa pasta só: <code>~/projetos/output/&lt;nome&gt;/</code>.</p>
+<p class="sub">Os comandos abaixo sêo os reais da skill. Todo o conteúdo — projeto, assets, áudios, <code>index.html</code> e os MP4 finais — vive numa pasta só: <code>~/projetos/output/&lt;nome&gt;/</code>.</p>
 <div class="step"><div class="b">1</div><div>
 <h3>Escreva o roteiro (SCRIPT.md)</h3>
-<p>Um beat por cena, 1–3 frases curtas (~8–15s de voz cada). A cena 1 abre <b>direto no gancho</b> — pergunta afiada, número que choca, promessa concreta ou erro comum. Sem logo, sem "olá pessoal": os ~3s iniciais decidem a retenção. Default de duração quando ninguém pede nada: ~1:40–2:00.</p>
+<p>Um beat por cena, 1–3 frases curtas (~8–15s de voz cada). A cena 1 abre <b>direto no gancho</b> — pergunta afiada, número que choca, promessa concreta ou erro comum. Sem logo, sem "olá pessoal": os ~3s iniciais decidem a retençêo. Default de duraçêo quando ninguém pede nada: ~1:40–2:00.</p>
 <pre><span class="c"># arco de referência (funda ou desdobre beats conforme o tema)</span>
 <span class="c"># hook → primeiro princípio → mecânica → conceito-chave →</span>
-<span class="c"># aplicação → avançado → exemplo real → fecho → CTA INEMA.CLUB</span></pre>
+<span class="c"># aplicaçêo → avançado → exemplo real → fecho → CTA INEMA.CLUB</span></pre>
 </div></div>
 <div class="step"><div class="b">2</div><div>
 <h3>Revise o texto antes de gerar áudio e slides</h3>
-<p>Cada frase tem duas formas. <b>Tela</b> (<code>caption</code> + literais em <code>html(p)</code>): PT-BR com acentuação varrida palavra a palavra, termos em inglês na grafia original. <b>Fala</b> (<code>txt/sN.txt</code>): siglas e URLs expandidas, inglês reescrito foneticamente — o TTS fonemiza pela grafia escrita.</p>
+<p>Cada frase tem duas formas. <b>Tela</b> (<code>caption</code> + literais em <code>html(p)</code>): PT-BR com acentuaçêo varrida palavra a palavra, termos em inglês na grafia original. <b>Fala</b> (<code>txt/sN.txt</code>): siglas e URLs expandidas, inglês reescrito foneticamente — o TTS fonemiza pela grafia escrita.</p>
 <pre><span class="c"># tela  →</span> Toda skill começa com o SKILL.md
 <span class="c"># fala  →</span> Toda skiu começa com o SKILL ponto M D
 
@@ -226,11 +226,11 @@
 <span class="k">node</span> fetch-fonts.mjs   <span class="c"># → assets/fonts/*.woff2 + fonts.css</span></pre>
 </div></div>
 <div class="step"><div class="b">5</div><div>
-<h3>Gere a narração (voz nei, local)</h3>
+<h3>Gere a narraçêo (voz nei, local)</h3>
 <p>Copie <code>scripts/narration-template.sh</code> como <code>assets/narration.sh</code>, escreva os <code>txt/sN.txt</code> na forma-fala e rode. Ele itera sobre todos os <code>sN.txt</code> que existirem, tenta a voz <code>nei</code> no inemavox local e cai no Kokoro por cena se falhar.</p>
 <pre><span class="k">bash</span> assets/narration.sh   <span class="c"># → assets/audio/sN.wav</span>
 
-<span class="c"># meça a duração REAL de cada WAV (vai para o campo `audio` da cena)</span>
+<span class="c"># meça a duraçêo REAL de cada WAV (vai para o campo `audio` da cena)</span>
 <span class="k">ffprobe</span> -v error -show_entries format=duration \
   -of default=noprint_wrappers=1:nokey=1 assets/audio/s1.wav</pre>
 </div></div>
@@ -240,12 +240,12 @@
 <pre><span class="k">const</span> TITLE = { l1: <span class="s">"PROFISSIONAL &lt;b&gt;LIBERAL&lt;/b&gt;"</span>,
                 l2: <span class="s">"por que ainda faz tudo &lt;b&gt;sozinho?&lt;/b&gt;"</span> };
 
-<span class="c">// a CTA é sempre a última — não remover</span>
+<span class="c">// a CTA é sempre a última — nêo remover</span>
 <span class="k">const</span> ALL = [...SCENES, CTA];</pre>
 </div></div>
 <div class="step"><div class="b">7</div><div>
 <h3>Valide antes de renderizar</h3>
-<p>O lint precisa dar 0 erros e o inspect 0 problemas de layout. Não deixe dois <code>index*.html</code> na raiz — o lint acusa <code>multiple_root_compositions</code>.</p>
+<p>O lint precisa dar 0 erros e o inspect 0 problemas de layout. Nêo deixe dois <code>index*.html</code> na raiz — o lint acusa <code>multiple_root_compositions</code>.</p>
 <pre><span class="k">npx</span> hyperframes lint                  <span class="c"># 0 erros</span>
 <span class="k">npx</span> hyperframes inspect --samples 16  <span class="c"># 0 problemas de layout</span></pre>
 </div></div>
@@ -266,7 +266,7 @@
 <div class="grid g2">
 <div class="card">
 <h3>🎓 Curso: Skills no Claude Code</h3>
-<p>O exemplo que acompanha o <code>narration-template.sh</code>: 8 cenas + CTA explicando o que são Skills, do <code>SKILL.md</code> à divulgação progressiva. O curso completo sobre esta skill está publicado em <a href="https://inematds.github.io/skill-video-explicativo/" rel="noopener" target="_blank">skill-video-explicativo</a>.</p>
+<p>O exemplo que acompanha o <code>narration-template.sh</code>: 8 cenas + CTA explicando o que sêo Skills, do <code>SKILL.md</code> à divulgaçêo progressiva. O curso completo sobre esta skill está publicado em <a href="https://inematds.github.io/skill-video-explicativo/" rel="noopener" target="_blank">skill-video-explicativo</a>.</p>
 </div>
 <div class="card">
 <h3>💼 Piloto "Liberal v1"</h3>
@@ -278,25 +278,25 @@
 </div>
 <div class="card">
 <h3>🎞️ Variações (2–3 versões)</h3>
-<p>Variação é outro ângulo do mesmo assunto — didático vs. caso real vs. contrarian vs. lista — com roteiro, gancho e narração próprios. Cada uma gera os dois formatos: <code>&lt;nome&gt;-v1-16x9.mp4</code>, <code>&lt;nome&gt;-v2-16x9.mp4</code>…</p>
+<p>Variaçêo é outro ângulo do mesmo assunto — didático vs. caso real vs. contrarian vs. lista — com roteiro, gancho e narraçêo próprios. Cada uma gera os dois formatos: <code>&lt;nome&gt;-v1-16x9.mp4</code>, <code>&lt;nome&gt;-v2-16x9.mp4</code>…</p>
 </div>
 </div>
 </div></section>
 <section id="roadmap"><div class="wrap">
 <span class="chip">Roadmap</span>
 <h2>Como a skill chegou na 1.12.3</h2>
-<p class="sub">Versionamento <code>v1.yy.xxx</code> — <code>yy</code> = recurso, <code>xxx</code> = correção. Histórico completo no <a href="https://github.com/inematds/video-explicativo/blob/main/skills/video-explicativo/CHANGELOG.md" rel="noopener" target="_blank">CHANGELOG.md</a>.</p>
+<p class="sub">Versionamento <code>v1.yy.xxx</code> — <code>yy</code> = recurso, <code>xxx</code> = correçêo. Histórico completo no <a href="https://github.com/inematds/video-explicativo/blob/main/skills/video-explicativo/CHANGELOG.md" rel="noopener" target="_blank">CHANGELOG.md</a>.</p>
 <div class="phase"><div class="tag">1.0.0</div><div class="d"><strong>Release inicial</strong><span>Pipeline HTML→MP4 (HyperFrames + Kokoro TTS local), house style dark premium âmbar, 16:9 e 9:16.</span></div></div>
 <div class="phase"><div class="tag">1.2.0</div><div class="d"><strong>Cenas data-driven + mid-scene activity</strong><span>O nº de cenas passa a sair do roteiro (<code>SCENES[]</code>), CTA anexada automaticamente e câmera Ken Burns em toda cena — fim do slideshow.</span></div></div>
 <div class="phase"><div class="tag">1.3.0</div><div class="d"><strong>Linguagem de movimento</strong><span>Vocabulário <code>M.*</code> (<code>reveal/sweep/type/float/pulse/glow/countUp</code>) no lugar de tweens improvisados, com deslocamentos menores no 9:16.</span></div></div>
 <div class="phase"><div class="tag">1.4.0</div><div class="d"><strong>Transições entre cenas</strong><span>Mapa <code>TRANS</code> em GSAP: <code>fade</code> (default), <code>push</code>, <code>slideUp</code>, <code>zoom</code>, <code>wipe</code>, <code>fadeBlack</code> — especiais só em 2–3 momentos-chave.</span></div></div>
 <div class="phase"><div class="tag">1.5.x</div><div class="d"><strong>Safe zones, fallback SVG e saída única</strong><span>Layout vertical validado, imagem raster vira opcional (SVG cobre), fim da cauda muda e um único MP4 por formato — sem cópia <code>-FINAL</code>.</span></div></div>
-<div class="phase"><div class="tag">1.6.3</div><div class="d"><strong>Revisão de texto + pronúncia de inglês</strong><span>Nova etapa antes dos WAVs: duas formas por frase (tela vs. fala) e léxico de inglês fonético.</span></div></div>
-<div class="phase"><div class="tag">1.7.3</div><div class="d"><strong>Gancho, áudio sob a voz e legibilidade</strong><span>Quatro comportamentos viram contrato: gancho de abertura, música baixa (<code>MUSIC_VOL ~0.14</code>), scrim/blur/painel sob texto, e o que é uma variação.</span></div></div>
-<div class="phase"><div class="tag">1.8.3</div><div class="d"><strong>Voz bella como default</strong><span>Narração passa a usar a voz da casa via inemavox (<code>chatterbox-vc</code>); Kokoro <code>pf_dora</code> vira fallback automático por cena.</span></div></div>
-<div class="phase"><div class="tag">1.10.3</div><div class="d"><strong>Título do 9:16 em 2 linhas</strong><span><code>TITLE = { l1, l2 }</code> — persona + curiosidade, fixo no topo do vertical e sumindo na CTA, fechando o loop de retenção.</span></div></div>
-<div class="phase"><div class="tag">1.12.3</div><div class="d"><strong>Explicativo, não reel</strong><span>Versão atual. Reel e short passam para o makeshorts com o explicavideos 9:16; narração 100% local com a voz do Nei (sem Edge TTS); checagem da narração por transcrição local; um protótipo aprovado antes de qualquer lote.</span></div></div>
-<div class="phase"><div class="tag">1.11.3</div><div class="d"><strong>Rodar sem GPU</strong><span>Documenta os substitutos de quem não tem GPU: narração por <code>edge-tts</code> ou Kokoro (com validação de voz obrigatória) e imagens pela Agnes AI (US$ 0) no lugar do flux2-klein.</span></div></div>
+<div class="phase"><div class="tag">1.6.3</div><div class="d"><strong>Revisêo de texto + pronúncia de inglês</strong><span>Nova etapa antes dos WAVs: duas formas por frase (tela vs. fala) e léxico de inglês fonético.</span></div></div>
+<div class="phase"><div class="tag">1.7.3</div><div class="d"><strong>Gancho, áudio sob a voz e legibilidade</strong><span>Quatro comportamentos viram contrato: gancho de abertura, música baixa (<code>MUSIC_VOL ~0.14</code>), scrim/blur/painel sob texto, e o que é uma variaçêo.</span></div></div>
+<div class="phase"><div class="tag">1.8.3</div><div class="d"><strong>Voz bella como default</strong><span>Narraçêo passa a usar a voz da casa via inemavox (<code>chatterbox-vc</code>); Kokoro <code>pf_dora</code> vira fallback automático por cena.</span></div></div>
+<div class="phase"><div class="tag">1.10.3</div><div class="d"><strong>Título do 9:16 em 2 linhas</strong><span><code>TITLE = { l1, l2 }</code> — persona + curiosidade, fixo no topo do vertical e sumindo na CTA, fechando o loop de retençêo.</span></div></div>
+<div class="phase"><div class="tag">1.12.3</div><div class="d"><strong>Explicativo, nêo reel</strong><span>Versêo atual. Reel e short passam para o makeshorts com o explicavideos 9:16; narraçêo 100% local com a voz do Nei (sem Edge TTS); checagem da narraçêo por transcriçêo local; um protótipo aprovado antes de qualquer lote.</span></div></div>
+<div class="phase"><div class="tag">1.11.3</div><div class="d"><strong>Rodar sem GPU</strong><span>Documenta os substitutos de quem nêo tem GPU: narraçêo por <code>edge-tts</code> ou Kokoro (com validaçêo de voz obrigatória) e imagens pela Agnes AI (US$ 0) no lugar do flux2-klein.</span></div></div>
 </div></section>
 <footer>
 <div class="wrap">
