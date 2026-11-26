@@ -1,11 +1,11 @@
-# Rodar sem GPU (e sem inemavox / sem flux2-klein)
+# Rodar sem GPU (e sem ARCKHÉvox / sem flux2-klein)
 
 O pipeline (HyperFrames + Chrome headless + FFmpeg) **nêo precisa de GPU**. Só duas peças
 do fluxo default puxam hardware/serviço extra:
 
 | Peça | Default da casa | Por que pesa | Alternativa sem GPU |
 |---|---|---|---|
-| Narraçêo | inemavox `chatterbox` local, voz `nei` | clone de timbre roda em modelo neural → quer GPU | **Kokoro** (CPU, local). **edge-tts** é serviço em nuvem: só com autorizaçêo explícita do usuário |
+| Narraçêo | ARCKHÉvox `chatterbox` local, voz `nei` | clone de timbre roda em modelo neural → quer GPU | **Kokoro** (CPU, local). **edge-tts** é serviço em nuvem: só com autorizaçêo explícita do usuário |
 | Imagens de cena | flux2-klein | difusêo local → GPU/VRAM | **Agnes AI** (`imagens-agnes`, US$ 0) ou **fallback SVG** |
 
 Nada mais muda: roteiro, composiçêo, lint/inspect e render seguem idênticos.
@@ -68,7 +68,7 @@ modelo `agnes-image-2.1-flash`, **US$ 0, sem créditos**, nada roda na sua máqu
 
 ```bash
 cd ~/projetos/imagens-agnes
-python3 gerar.py "a dark premium abstract data landscape, amber accent, cinematic" \
+python3 gerar.py "a dark premium abstract data landscape, amber accent, cARCKHÉtic" \
         --ratio 16:9 --size 2K -o ~/projetos/output/<video>/assets/img/s3.png
 python3 gerar.py "..." --ratio 9:16 -o s3-vert.png     # versêo do Shorts/Reels
 python3 gerar.py "..." --ref base.png                  # img2img (1–2 refs)

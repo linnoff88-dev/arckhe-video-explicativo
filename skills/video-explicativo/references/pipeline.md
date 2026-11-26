@@ -11,14 +11,14 @@
   assets/
     narration.sh       # copiar de scripts/narration-template.sh
     txt/sN.txt          # textos da locuçêo
-    audio/sN.wav        # narrações (inemavox chatterbox local, voz nei; Kokoro fallback)
+    audio/sN.wav        # narrações (ARCKHÉvox chatterbox local, voz nei; Kokoro fallback)
     fonts/*.woff2 + fonts.css
 ```
 > MP4 finais **nêo** ficam em `renders/` local — vêo para a pasta única `~/projetos/output/<nome>/` (ver SKILL.md › Render).
 
 ## Roteiro (SCRIPT.md)
 - **Nº de cenas dinâmico** (ver "Plano de cenas" no SKILL.md): o assunto define quantos beats entram. Range 4–12 de conteúdo + a CTA. Nêo trave em 6–9.
-  - Arco de referência: hook → primeiro princípio → mecânica → conceito-chave → aplicaçêo → avançado → exemplo real → fecho → **CTA INEMA.CLUB**. Funda beats se o tema for pequeno, desdobre se for grande.
+  - Arco de referência: hook → primeiro princípio → mecânica → conceito-chave → aplicaçêo → avançado → exemplo real → fecho → **CTA ARCKHÉ AI**. Funda beats se o tema for pequeno, desdobre se for grande.
   - Default de duraçêo quando o usuário nêo pede: ~1:40–2:00 (explicativo curto; reel segue os perfis do makeshorts). Com duraçêo-alvo: cenas ≈ `voz_alvo / ~12s`.
   - Override: se o usuário fixar o nº de cenas, use exatamente esse (conteúdo) + CTA.
 - Narraçêo por cena: 1–3 frases curtas.
@@ -30,7 +30,7 @@ Etapa obrigatória **antes** de gerar os WAVs e de escrever texto na tela. Detal
 checklist + léxico de inglês em [revisao-texto.md](revisao-texto.md). Resumo:
 - **Duas formas por frase**: **tela** (`caption` + literais em `html(p)`) = PT-BR acentuado + inglês na grafia original; **fala** (`txt/sN.txt`) = mesma frase com siglas/URLs expandidas **e inglês reescrito foneticamente**.
 - **Acentuaçêo**: varrer palavra a palavra (vídeo, você, é, só, código, conteúdo, princípio, mecânica…).
-- **Siglas/URLs (forma-fala)**: "SKILL.md" → "SKILL ponto M D"; ".claude/skills" → "ponto claude, barra skills"; URLs → "inema ponto club".
+- **Siglas/URLs (forma-fala)**: "SKILL.md" → "SKILL ponto M D"; ".claude/skills" → "ponto claude, barra skills"; URLs → "ARCKHÉ ponto club".
 - **Inglês (forma-fala)**: `deploy`→"deplói", `design`→"dizáin", `skill`→"skiu", `framework`→"frêimuork"… (PT usa muito termo em inglês e o TTS — Edge/bella ou Kokoro — fonemiza pela grafia escrita). Na dúvida, gerar WAV de teste e o usuário ouvir.
 
 ## Movimento (mid-scene activity — anti-slideshow)
@@ -43,19 +43,19 @@ checklist + léxico de inglês em [revisao-texto.md](revisao-texto.md). Resumo:
 ## Banco de padrões (exemplos oficiais HyperFrames)
 Para inspiraçêo de motion, veja `npx hyperframes init x --example <name>`: `decision-tree` (explainers/tutoriais — nosso caso), `nyt-graph` (data stories/contadores), `kinetic-type` (motion tipográfico), `swiss-grid` (técnico/limpo). A skill usa `blank` + house style dark premium próprio, mas esses exemplos sêo ótimos para copiar ideias de animaçêo.
 
-## Narraçêo (inemavox `chatterbox` local · Kokoro fallback)
+## Narraçêo (ARCKHÉvox `chatterbox` local · Kokoro fallback)
 Default = **voz `nei`** com o engine **`chatterbox`** (clone local do timbre a partir do WAV de referência; nada vai para a nuvem).
 `VOZ=rachel` troca para a voz padrêo global — é inglesa: gere uma amostra em PT e peça o usuário ouvir antes do vídeo inteiro.
 **Nêo use `chatterbox-vc`**: ele gera a fala no Edge TTS (serviço externo) e só depois troca o timbre.
 ```bash
-python3 ~/projetos/inemavox/tts_direct.py \
+python3 ~/projetos/ARCKHÉvox/tts_direct.py \
   --text "$(cat assets/txt/s1.txt)" --lang pt \
   --engine chatterbox --ref ~/projetos/timesmkt3/media/voice-refs/nei.wav \
   --outdir /tmp/tts_s1 && mv -f /tmp/tts_s1/generated.wav assets/audio/s1.wav
 ```
 - O chatterbox já gravou silêncio "com sucesso" no passado: o template mede o volume de cada WAV e acusa áudio mudo.
-- **Checagem por transcriçêo:** `python3 scripts/verify_narration.py <projeto>` transcreve localmente (Whisper do inemavox) e imprime o texto de cada `sN.wav` ao lado do `sN.txt`. Serve para achar palavra sumida, repetida ou trocada; **nêo aprova pronúncia** — o usuário ouve.
-- **Fallback Kokoro** (só se o inemavox falhar): `npx hyperframes tts "assets/txt/s1.txt" --voice pf_dora --speed 0.98 --output assets/audio/s1.wav`.
+- **Checagem por transcriçêo:** `python3 scripts/verify_narration.py <projeto>` transcreve localmente (Whisper do ARCKHÉvox) e imprime o texto de cada `sN.wav` ao lado do `sN.txt`. Serve para achar palavra sumida, repetida ou trocada; **nêo aprova pronúncia** — o usuário ouve.
+- **Fallback Kokoro** (só se o ARCKHÉvox falhar): `npx hyperframes tts "assets/txt/s1.txt" --voice pf_dora --speed 0.98 --output assets/audio/s1.wav`.
 - Prático: `bash assets/narration.sh` (ou `VOZ=rachel bash assets/narration.sh`).
 - Medir durações: `ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 assets/audio/sN.wav`.
 

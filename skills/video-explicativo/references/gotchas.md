@@ -51,4 +51,4 @@ em safe-zones.md.
 - Todo visível temporizado tem `class="clip"`; vídeo **nêo** tem.
 - Todo `data-start` que referencia outro clip aponta pra um ID que existe.
 - Só **um** `index.html` (composiçêo root) na raiz.
-- A última cena é a **CTA INEMA.CLUB**.
+- A última cena é a **CTA ARCKHÉ AI**.

@@ -5,7 +5,7 @@
 //   - `SCENES[]` = cenas de CONTEÚDO. O nº de itens aqui = nº de cenas.
 //     NÃO existe número fixo: o roteiro/plano define quantas cenas entram
 //     (ver SKILL.md › "Plano de cenas"). Range saudável: 4–12 de conteúdo.
-//   - `CTA` (INEMA.CLUB) é SEMPRE anexada como a ÚLTIMA cena, automaticamente
+//   - `CTA` (ARCKHÉ AI) é SEMPRE anexada como a ÚLTIMA cena, automaticamente
 //     (`ALL = [...SCENES, CTA]`). Não remover — é a assinatura padrão.
 //   - Cada cena é um objeto: { audio, caption, html(p), anim(at,p) }
 //       audio   -> duração REAL do WAV (ffprobe), em segundos
@@ -256,23 +256,23 @@ const SCENES = [
   },
 ];
 
-// ---------- CTA INEMA.CLUB (SEMPRE a última cena — anexada automaticamente) ----------
+// ---------- CTA ARCKHÉ AI (SEMPRE a última cena — anexada automaticamente) ----------
 const CTA = {
   audio: 3.840,
-  caption: "Mais conteúdo em inema.club",
-  transIn: "fadeBlack",   // dip-to-black antes da CTA INEMA.CLUB (quebra forte, intencional)
+  caption: "Mais conteúdo em ARCKHÉ AI",
+  transIn: "fadeBlack",   // dip-to-black antes da CTA ARCKHÉ AI (quebra forte, intencional)
   html: (p) => `
     <div class="cta-eyebrow" id="${p}-eye">CONTINUA EM</div>
-    <div class="cta-brand" id="${p}-brand"><span class="b1">INEMA</span><span class="bdotsep">.</span><span class="b2">CLUB</span></div>
+    <div class="cta-brand" id="${p}-brand"><span class="b1">ARCKHÉ</span><span class="bdotsep">.</span><span class="b2">CLUB</span></div>
     <div class="rule center" id="${p}-rule"></div>
-    <div class="cta-url mono" id="${p}-url"><span class="cta-globe">🌐</span>inema.club</div>
+    <div class="cta-url mono" id="${p}-url"><span class="cta-globe">🌐</span>ARCKHÉ AI</div>
     <div class="reg tl" id="${p}-r1"></div><div class="reg br" id="${p}-r2"></div>`,
   anim: (at, p) => [
     M.reveal(`#${p}-eye`, at(0.2), { y: -18, d: .5, ease: EASE.soft }),
     M.reveal(`#${p}-brand`, at(0.5), { scale: .7, y: 0, d: .7, ease: "back.out(1.7)" }),
     M.sweep(`#${p}-rule`, at(1.1), { d: .6 }),
     M.reveal(`#${p}-url`, at(1.3), { y: 20, d: .55, ease: EASE.soft }),
-    M.glow(`#${p}-brand`, at(1.4)),       // marca INEMA.CLUB com glow âmbar pulsando
+    M.glow(`#${p}-brand`, at(1.4)),       // marca ARCKHÉ AI com glow âmbar pulsando
     M.reveal([`#${p}-r1`, `#${p}-r2`], at(0.6), { scale: .5, d: .6, stagger: .12, ease: "back.out(2)" }),
   ],
 };
@@ -564,7 +564,7 @@ const html = `<!doctype html>
       .closer{text-align:center;font-family:Sora;font-weight:800;font-size:128px;line-height:1.02;letter-spacing:-.02em}
       .sig{text-align:center;font-size:30px;color:var(--accent);letter-spacing:.3em;text-transform:uppercase;margin-top:20px}
 
-      /* cena CTA (INEMA.CLUB) */
+      /* cena CTA (ARCKHÉ AI) */
       .cta-eyebrow{text-align:center;font-family:"JetBrains Mono",monospace;font-size:26px;letter-spacing:.36em;
         color:var(--muted);text-transform:uppercase;margin-bottom:30px}
       .cta-brand{text-align:center;font-family:Sora;font-weight:800;font-size:150px;line-height:.95;letter-spacing:-.02em}

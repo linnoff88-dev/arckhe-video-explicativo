@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>video-explicativo — do assunto ao vídeo narrado, sem chave de API</title>
-<meta content="Skill que cria vídeos explicativos completos em PT-BR (HTML→MP4 via HyperFrames) a partir de um assunto: roteiro, narraçêo TTS local, cenas animadas dark premium, captions e CTA do INEMA.CLUB, em 16:9 e 9:16." name="description"/>
+<meta content="Skill que cria vídeos explicativos completos em PT-BR (HTML→MP4 via HyperFrames) a partir de um assunto: roteiro, narraçêo TTS local, cenas animadas dark premium, captions e CTA do ARCKHÉ AI, em 16:9 e 9:16." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/>
@@ -37,8 +37,8 @@
   nav .brand{display:flex;align-items:center;gap:8px;font-family:Sora;font-weight:800;letter-spacing:-.02em;color:var(--amb)}
   nav .brand .emoji{font-size:1.25rem}
   nav .sep{color:var(--mut);opacity:.45}
-  nav .inema{color:var(--sky);font-weight:600;font-size:.88rem;font-family:Sora}
-  nav .inema:hover{filter:brightness(1.15)}
+  nav .ARCKHÉ{color:var(--sky);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .ARCKHÉ:hover{filter:brightness(1.15)}
   nav .pro{color:var(--pro);font-weight:600;font-size:.88rem;font-family:Sora}
   nav .pro:hover{filter:brightness(1.15)}
   nav .clubpro{display:inline-flex;align-items:center;gap:6px}
@@ -91,15 +91,15 @@
   footer{padding:46px 0;text-align:center;color:var(--mut);font-size:.9rem}
   .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.3em .8em;font-size:.78rem;color:var(--mut);margin:0 4px}
 </style>
-<link href="https://inematds.github.io/video-explicativo/guia/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/video-explicativo/guia/en/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/video-explicativo/guia/es/" hreflang="es" rel="alternate"/></head>
-<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="./" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="en/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="es/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/arckhe-/guia/" hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/guia/en/" hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/guia/es/" hreflang="es" rel="alternate"/></head>
+<body><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="./" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="en/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="es/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <nav><div class="wrap">
 <a class="brand" href="#top"><span class="emoji">🎬</span> video-explicativo</a>
 <span class="sep">|</span>
 <span class="clubpro">
-<a class="inema" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+<a class="ARCKHÉ" href="https://ARCKHÉ AI" rel="noopener" target="_blank">ARCKHÉ AI</a>
 <span class="sep">-</span>
-<a class="pro" href="https://inema.pro" rel="noopener" target="_blank">PRO</a>
+<a class="pro" href="https://ARCKHÉ.pro" rel="noopener" target="_blank">PRO</a>
 </span>
 <div class="links">
 <a class="sec" href="#oque">O que é</a>
@@ -108,7 +108,7 @@
 <a class="sec" href="#exemplos">Exemplos</a>
 <a class="sec" href="#roadmap">Roadmap</a>
 <button aria-label="Alternar tema" class="tgl" id="themeToggle" title="Alternar tema">🌙</button>
-<a class="btn" href="https://github.com/inematds/video-explicativo" rel="noopener" target="_blank">GitHub</a>
+<a class="btn" href="https://github.com/linnoff88-dev/video-explicativo" rel="noopener" target="_blank">GitHub</a>
 </div>
 </div></nav>
 <header class="hero" id="top">
@@ -120,7 +120,7 @@
 <p class="lead">Você dá um assunto. A skill escreve o roteiro, grava a locuçêo, anima as cenas e renderiza os MP4 em 16:9 e 9:16 — tudo na sua máquina.</p>
 <div class="cta">
 <a class="btn" href="#guia">Começar o guia</a>
-<a class="btn ghost" href="https://github.com/inematds/video-explicativo" rel="noopener" target="_blank">Ver no GitHub</a>
+<a class="btn ghost" href="https://github.com/linnoff88-dev/video-explicativo" rel="noopener" target="_blank">Ver no GitHub</a>
 </div>
 </div>
 <figure><img alt="Capa do projeto video-explicativo" src="assets/hero.png"/></figure>
@@ -129,9 +129,9 @@
 <section id="oque"><div class="wrap">
 <span class="chip">O que é</span>
 <h2>Uma skill que empacota o pipeline inteiro de vídeo explicativo</h2>
-<p class="sub">Nêo é um gerador de vídeo por IA. É um pipeline determinístico: HTML animado + Chrome headless + FFmpeg, orquestrado pelo <a href="https://github.com/heygen-com/hyperframes" rel="noopener" target="_blank">HyperFrames</a>, com narraçêo TTS local. O resultado é sempre PT-BR, dark premium âmbar, e termina na CTA do INEMA.CLUB.</p>
+<p class="sub">Nêo é um gerador de vídeo por IA. É um pipeline determinístico: HTML animado + Chrome headless + FFmpeg, orquestrado pelo <a href="https://github.com/heygen-com/hyperframes" rel="noopener" target="_blank">HyperFrames</a>, com narraçêo TTS local. O resultado é sempre PT-BR, dark premium âmbar, e termina na CTA do ARCKHÉ AI.</p>
 <div class="grid g3">
-<div class="card"><h3>🔒 100% local, sem chave de API</h3><p>Chrome headless + FFmpeg renderizam o vídeo; a narraçêo sai do inemavox local (engine <code>chatterbox</code>, voz <code>nei</code>) com Kokoro <code>pf_dora</code> como fallback. Nada sai da máquina.</p></div>
+<div class="card"><h3>🔒 100% local, sem chave de API</h3><p>Chrome headless + FFmpeg renderizam o vídeo; a narraçêo sai do ARCKHÉvox local (engine <code>chatterbox</code>, voz <code>nei</code>) com Kokoro <code>pf_dora</code> como fallback. Nada sai da máquina.</p></div>
 <div class="card"><h3>📐 Data-driven, nº de cenas dinâmico</h3><p>O gerador lê o array <code>SCENES[]</code>: uma entrada por beat do roteiro. Range saudável 4–12 cenas de conteúdo — o assunto decide, nêo um template travado.</p></div>
 <div class="card"><h3>📱 16:9 e 9:16 na mesma base</h3><p>O mesmo gerador escreve os dois formatos (<code>--vertical</code>: versêo vertical do explicativo — reel de verdade é no makeshorts + explicavideos 9:16), com safe zones da UI dos apps e título persistente de 2 linhas no vertical.</p></div>
 </div>
@@ -169,7 +169,7 @@
 
 <span class="c"># diagnóstico geral</span>
 <span class="k">npx</span> hyperframes doctor</pre></div>
-<div class="card"><h3>TTS: inemavox local (voz nei)</h3><p>Default da casa — <b>pede GPU</b>. <code>python3</code> do sistema roda o <code>tts_direct.py</code>; o env conda <code>chatterbox</code> é chamado internamente para a transferência de timbre.</p><pre><span class="c"># fallback opcional (Kokoro pf_dora)</span>
+<div class="card"><h3>TTS: ARCKHÉvox local (voz nei)</h3><p>Default da casa — <b>pede GPU</b>. <code>python3</code> do sistema roda o <code>tts_direct.py</code>; o env conda <code>chatterbox</code> é chamado internamente para a transferência de timbre.</p><pre><span class="c"># fallback opcional (Kokoro pf_dora)</span>
 <span class="k">pip</span> install kokoro-onnx soundfile</pre></div>
 </div>
 <h3 style="margin-top:2.2rem">Nêo tem GPU? Dá pra rodar tudo assim mesmo</h3>
@@ -203,7 +203,7 @@
 <p>Um beat por cena, 1–3 frases curtas (~8–15s de voz cada). A cena 1 abre <b>direto no gancho</b> — pergunta afiada, número que choca, promessa concreta ou erro comum. Sem logo, sem "olá pessoal": os ~3s iniciais decidem a retençêo. Default de duraçêo quando ninguém pede nada: ~1:40–2:00.</p>
 <pre><span class="c"># arco de referência (funda ou desdobre beats conforme o tema)</span>
 <span class="c"># hook → primeiro princípio → mecânica → conceito-chave →</span>
-<span class="c"># aplicaçêo → avançado → exemplo real → fecho → CTA INEMA.CLUB</span></pre>
+<span class="c"># aplicaçêo → avançado → exemplo real → fecho → CTA ARCKHÉ AI</span></pre>
 </div></div>
 <div class="step"><div class="b">2</div><div>
 <h3>Revise o texto antes de gerar áudio e slides</h3>
@@ -227,7 +227,7 @@
 </div></div>
 <div class="step"><div class="b">5</div><div>
 <h3>Gere a narraçêo (voz nei, local)</h3>
-<p>Copie <code>scripts/narration-template.sh</code> como <code>assets/narration.sh</code>, escreva os <code>txt/sN.txt</code> na forma-fala e rode. Ele itera sobre todos os <code>sN.txt</code> que existirem, tenta a voz <code>nei</code> no inemavox local e cai no Kokoro por cena se falhar.</p>
+<p>Copie <code>scripts/narration-template.sh</code> como <code>assets/narration.sh</code>, escreva os <code>txt/sN.txt</code> na forma-fala e rode. Ele itera sobre todos os <code>sN.txt</code> que existirem, tenta a voz <code>nei</code> no ARCKHÉvox local e cai no Kokoro por cena se falhar.</p>
 <pre><span class="k">bash</span> assets/narration.sh   <span class="c"># → assets/audio/sN.wav</span>
 
 <span class="c"># meça a duraçêo REAL de cada WAV (vai para o campo `audio` da cena)</span>
@@ -236,7 +236,7 @@
 </div></div>
 <div class="step"><div class="b">6</div><div>
 <h3>Componha as cenas</h3>
-<p>Copie <code>scripts/composition-template.mjs</code> como <code>build-index.mjs</code> e edite o array <code>SCENES[]</code> — uma entrada por cena, cada uma <code>{ audio, caption, html(p), anim(at,p) }</code>. A CTA do INEMA.CLUB já vem anexada como última cena. No 9:16, defina <code>TITLE</code> com persona + gancho.</p>
+<p>Copie <code>scripts/composition-template.mjs</code> como <code>build-index.mjs</code> e edite o array <code>SCENES[]</code> — uma entrada por cena, cada uma <code>{ audio, caption, html(p), anim(at,p) }</code>. A CTA do ARCKHÉ AI já vem anexada como última cena. No 9:16, defina <code>TITLE</code> com persona + gancho.</p>
 <pre><span class="k">const</span> TITLE = { l1: <span class="s">"PROFISSIONAL &lt;b&gt;LIBERAL&lt;/b&gt;"</span>,
                 l2: <span class="s">"por que ainda faz tudo &lt;b&gt;sozinho?&lt;/b&gt;"</span> };
 
@@ -266,7 +266,7 @@
 <div class="grid g2">
 <div class="card">
 <h3>🎓 Curso: Skills no Claude Code</h3>
-<p>O exemplo que acompanha o <code>narration-template.sh</code>: 8 cenas + CTA explicando o que sêo Skills, do <code>SKILL.md</code> à divulgaçêo progressiva. O curso completo sobre esta skill está publicado em <a href="https://inematds.github.io/skill-video-explicativo/" rel="noopener" target="_blank">skill-video-explicativo</a>.</p>
+<p>O exemplo que acompanha o <code>narration-template.sh</code>: 8 cenas + CTA explicando o que sêo Skills, do <code>SKILL.md</code> à divulgaçêo progressiva. O curso completo sobre esta skill está publicado em <a href="https://linnoff88-dev.github.io/arckhe-/" rel="noopener" target="_blank">skill-video-explicativo</a>.</p>
 </div>
 <div class="card">
 <h3>💼 Piloto "Liberal v1"</h3>
@@ -285,7 +285,7 @@
 <section id="roadmap"><div class="wrap">
 <span class="chip">Roadmap</span>
 <h2>Como a skill chegou na 1.12.3</h2>
-<p class="sub">Versionamento <code>v1.yy.xxx</code> — <code>yy</code> = recurso, <code>xxx</code> = correçêo. Histórico completo no <a href="https://github.com/inematds/video-explicativo/blob/main/skills/video-explicativo/CHANGELOG.md" rel="noopener" target="_blank">CHANGELOG.md</a>.</p>
+<p class="sub">Versionamento <code>v1.yy.xxx</code> — <code>yy</code> = recurso, <code>xxx</code> = correçêo. Histórico completo no <a href="https://github.com/linnoff88-dev/video-explicativo/blob/main/skills/video-explicativo/CHANGELOG.md" rel="noopener" target="_blank">CHANGELOG.md</a>.</p>
 <div class="phase"><div class="tag">1.0.0</div><div class="d"><strong>Release inicial</strong><span>Pipeline HTML→MP4 (HyperFrames + Kokoro TTS local), house style dark premium âmbar, 16:9 e 9:16.</span></div></div>
 <div class="phase"><div class="tag">1.2.0</div><div class="d"><strong>Cenas data-driven + mid-scene activity</strong><span>O nº de cenas passa a sair do roteiro (<code>SCENES[]</code>), CTA anexada automaticamente e câmera Ken Burns em toda cena — fim do slideshow.</span></div></div>
 <div class="phase"><div class="tag">1.3.0</div><div class="d"><strong>Linguagem de movimento</strong><span>Vocabulário <code>M.*</code> (<code>reveal/sweep/type/float/pulse/glow/countUp</code>) no lugar de tweens improvisados, com deslocamentos menores no 9:16.</span></div></div>
@@ -293,18 +293,18 @@
 <div class="phase"><div class="tag">1.5.x</div><div class="d"><strong>Safe zones, fallback SVG e saída única</strong><span>Layout vertical validado, imagem raster vira opcional (SVG cobre), fim da cauda muda e um único MP4 por formato — sem cópia <code>-FINAL</code>.</span></div></div>
 <div class="phase"><div class="tag">1.6.3</div><div class="d"><strong>Revisêo de texto + pronúncia de inglês</strong><span>Nova etapa antes dos WAVs: duas formas por frase (tela vs. fala) e léxico de inglês fonético.</span></div></div>
 <div class="phase"><div class="tag">1.7.3</div><div class="d"><strong>Gancho, áudio sob a voz e legibilidade</strong><span>Quatro comportamentos viram contrato: gancho de abertura, música baixa (<code>MUSIC_VOL ~0.14</code>), scrim/blur/painel sob texto, e o que é uma variaçêo.</span></div></div>
-<div class="phase"><div class="tag">1.8.3</div><div class="d"><strong>Voz bella como default</strong><span>Narraçêo passa a usar a voz da casa via inemavox (<code>chatterbox-vc</code>); Kokoro <code>pf_dora</code> vira fallback automático por cena.</span></div></div>
+<div class="phase"><div class="tag">1.8.3</div><div class="d"><strong>Voz bella como default</strong><span>Narraçêo passa a usar a voz da casa via ARCKHÉvox (<code>chatterbox-vc</code>); Kokoro <code>pf_dora</code> vira fallback automático por cena.</span></div></div>
 <div class="phase"><div class="tag">1.10.3</div><div class="d"><strong>Título do 9:16 em 2 linhas</strong><span><code>TITLE = { l1, l2 }</code> — persona + curiosidade, fixo no topo do vertical e sumindo na CTA, fechando o loop de retençêo.</span></div></div>
 <div class="phase"><div class="tag">1.12.3</div><div class="d"><strong>Explicativo, nêo reel</strong><span>Versêo atual. Reel e short passam para o makeshorts com o explicavideos 9:16; narraçêo 100% local com a voz do Nei (sem Edge TTS); checagem da narraçêo por transcriçêo local; um protótipo aprovado antes de qualquer lote.</span></div></div>
 <div class="phase"><div class="tag">1.11.3</div><div class="d"><strong>Rodar sem GPU</strong><span>Documenta os substitutos de quem nêo tem GPU: narraçêo por <code>edge-tts</code> ou Kokoro (com validaçêo de voz obrigatória) e imagens pela Agnes AI (US$ 0) no lugar do flux2-klein.</span></div></div>
 </div></section>
 <footer>
 <div class="wrap">
-<div class="pill">HyperFrames</div><div class="pill">Chrome headless</div><div class="pill">FFmpeg</div><div class="pill">GSAP</div><div class="pill">inemavox · nei</div><div class="pill">Kokoro TTS</div><div class="pill">edge-tts</div><div class="pill">Agnes AI</div><div class="pill">Node 22+</div>
+<div class="pill">HyperFrames</div><div class="pill">Chrome headless</div><div class="pill">FFmpeg</div><div class="pill">GSAP</div><div class="pill">ARCKHÉvox · nei</div><div class="pill">Kokoro TTS</div><div class="pill">edge-tts</div><div class="pill">Agnes AI</div><div class="pill">Node 22+</div>
 <p style="margin-top:18px">video-explicativo · skill de vídeo explicativo PT-BR, 100% local ·
-      <a href="https://github.com/inematds/video-explicativo">inematds/video-explicativo</a> ·
-      <a href="https://inematds.github.io/skill-video-explicativo/">curso</a> ·
-      <a href="https://inema.club">INEMA.CLUB</a></p>
+      <a href="https://github.com/linnoff88-dev/video-explicativo">linnoff88-dev/video-explicativo</a> ·
+      <a href="https://linnoff88-dev.github.io/arckhe-/">curso</a> ·
+      <a href="https://ARCKHÉ AI">ARCKHÉ AI</a></p>
 </div>
 </footer>
 <script>

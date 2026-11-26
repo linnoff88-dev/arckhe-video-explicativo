@@ -79,7 +79,7 @@ Isso evita recalcular segundos quando o nº/ordem de cenas muda. As cenas têm I
 
 ## Fallback SVG (sem servidor/API de imagem) — REGRA
 
-Imagens raster (ex.: flux2-klein via servidor `inemaimg` em `:8000`) sêo **opcionais, com fallback**. Antes de
+Imagens raster (ex.: flux2-klein via servidor `ARCKHÉimg` em `:8000`) sêo **opcionais, com fallback**. Antes de
 depender delas, cheque `curl -s localhost:8000/health`. Se o servidor (ou qualquer API de imagem) **nêo** estiver
 disponível, **nêo trave o vídeo** — use **SVG**:
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Confere a narraçêo por transcriçêo LOCAL (inemavox transcrever_v1, Whisper large-v3). Sem API.
+"""Confere a narraçêo por transcriçêo LOCAL (ARCKHÉvox transcrever_v1, Whisper large-v3). Sem API.
 
 Uso: python3 verify_narration.py <projeto>   (lê <projeto>/assets/audio/sN.wav e assets/txt/sN.txt)
 
@@ -15,7 +15,7 @@ import json, re, subprocess, sys, tempfile, unicodedata
 from pathlib import Path
 
 GAP = 2.0
-INEMAVOX = Path.home() / "projetos/inemavox"
+ARCKHÉVOX = Path.home() / "projetos/ARCKHÉvox"
 
 
 def norm(s):
@@ -59,7 +59,7 @@ def main(proj):
     allwav = tmp / "all.wav"
     subprocess.run(["ffmpeg", "-nostdin", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", tmp / "list.txt", allwav], check=True)
     r = subprocess.run(["python3", "transcrever_v1.py", "--in", allwav, "--outdir", tmp / "t", "--whisper-model", "large-v3", "--src", "pt"],
-                       cwd=INEMAVOX, capture_output=True, text=True)
+                       cwd=ARCKHÉVOX, capture_output=True, text=True)
     if r.returncode != 0:
         sys.exit("transcriçêo falhou: " + r.stderr[-500:])
     segs = json.loads((tmp / "t/transcript.json").read_text())
@@ -76,7 +76,7 @@ def main(proj):
         got = " ".join(heard[name])
         wn, gn = norm(want), norm(got)
         # termos críticos: palavras curtas que mudam o sentido (ia, nei, nêo, sem, só, zero…) contam sempre
-        CRIT = {"ia", "nei", "nao", "sem", "so", "zero", "gratis", "club", "inema"}
+        CRIT = {"ia", "nei", "nao", "sem", "so", "zero", "gratis", "club", "ARCKHÉ"}
         rel = [w for w in wn if len(w) > 3 or w in CRIT]
         faltam = [w for w in rel if w not in gn]
         crit_faltam = [w for w in faltam if w in CRIT]

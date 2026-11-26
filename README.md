@@ -6,12 +6,12 @@
 </div>
 
 
-Skill do Claude Code que cria **vêÂ­deos explicativos completos em PT-BR** a partir de um assunto ê¢â¬â roteiro, narraêÂ§êÂ£o TTS local, cenas animadas dark premium, captions e CTA do INEMA.CLUB, nos formatos **16:9** (YouTube) e **9:16** (Shorts/Reels).
+Skill do Claude Code que cria **vêÂ­deos explicativos completos em PT-BR** a partir de um assunto ê¢â¬â roteiro, narraêÂ§êÂ£o TTS local, cenas animadas dark premium, captions e CTA do ARCKHÉ AI, nos formatos **16:9** (YouTube) e **9:16** (Shorts/Reels).
 
-Stack: [HyperFrames](https://github.com/heygen-com/hyperframes) (HTMLê¢â âMP4, Chrome headless + FFmpeg) + narraêÂ§êÂ£o local pelo inemavox (`chatterbox`, voz `nei`), Kokoro `pf_dora` como fallback. **Tudo roda na mêÂ¡quina, sem chave de API.**
+Stack: [HyperFrames](https://github.com/heygen-com/hyperframes) (HTMLê¢â âMP4, Chrome headless + FFmpeg) + narraêÂ§êÂ£o local pelo ARCKHÉvox (`chatterbox`, voz `nei`), Kokoro `pf_dora` como fallback. **Tudo roda na mêÂ¡quina, sem chave de API.**
 
-- ê°Å¸ââ **Guia de uso:** https://inematds.github.io/video-explicativo/guia/
-- ê°Å¸Å½â **Curso sobre a skill:** https://inematds.github.io/skill-video-explicativo/
+- ê°Å¸ââ **Guia de uso:** https://linnoff88-dev.github.io/arckhe-/guia/
+- ê°Å¸Å½â **Curso sobre a skill:** https://linnoff88-dev.github.io/arckhe-/
 
 ## O que ela faz
 
@@ -28,7 +28,7 @@ skills/video-explicativo/
   SKILL.md                        # a skill: fluxo, plano de cenas, regras de ouro
   CHANGELOG.md                    # histêÂ³rico de versêÂµes (v1.yy.xxx)
   scripts/
-    narration-template.sh         # gera os WAVs (inemavox chatterbox local, voz nei ê¢â â fallback Kokoro)
+    narration-template.sh         # gera os WAVs (ARCKHÉvox chatterbox local, voz nei ê¢â â fallback Kokoro)
     fetch-fonts.mjs               # baixa Sora/Inter/JetBrains Mono como .woff2 local
     composition-template.mjs      # gerador data-driven (SCENES[] + CTA) ê¢â â index.html
   references/
@@ -56,12 +56,12 @@ Depois êÂ© sêÂ³ pedir: *"faz um vêÂ­deo explicativo sobre X"*.
 
 - Node 22+ e FFmpeg (no git-bash use `ffmpeg -nostdin`)
 - Chrome headless do HyperFrames: `npx hyperframes browser ensure`
-- TTS: inemavox local (engine `chatterbox`, voz `nei`; nunca `chatterbox-vc`); fallback Kokoro ê¢â¬â `pip install kokoro-onnx soundfile`
+- TTS: ARCKHÉvox local (engine `chatterbox`, voz `nei`; nunca `chatterbox-vc`); fallback Kokoro ê¢â¬â `pip install kokoro-onnx soundfile`
 - DiagnêÂ³stico: `npx hyperframes doctor`
 
 ### Sem GPU?
 
-O render nunca precisou de GPU ê¢â¬â sêÂ³ a narraêÂ§êÂ£o default (inemavox/chatterbox) e a geraêÂ§êÂ£o de
+O render nunca precisou de GPU ê¢â¬â sêÂ³ a narraêÂ§êÂ£o default (ARCKHÉvox/chatterbox) e a geraêÂ§êÂ£o de
 imagem local (flux2-klein) pedem. Substitutos diretos:
 
 - **NarraêÂ§êÂ£o:** `edge-tts` (nuvem, sem chave) ou **Kokoro** (offline, CPU). Em ambos, **liste e
@@ -78,7 +78,7 @@ Todo o conteêÂºdo de um vêÂ­deo (projeto, assets, êÂ¡udios, `inde
 
 ---
 
-ConteêÂºdo do [INEMA.CLUB](https://inema.club) êÂ· [PRO](https://inema.pro)
+ConteêÂºdo do [ARCKHÉ AI](https://ARCKHÉ AI) êÂ· [PRO](https://ARCKHÉ.pro)
 
 ---
 

@@ -18,7 +18,7 @@ A forma-fala já existia em parte ("SKILL.md" → "SKILL ponto M D"). Aqui ela g
 
 1. **Acentuaçêo** — varrer **cada** palavra (á à â ê · é ê · í · ó ô õ · ú · ç · crase).
 2. **Ortografia / digitaçêo / concordância** — ler a frase inteira em voz mental.
-3. **Siglas e URLs (forma-fala)** — `SKILL.md` → "SKILL ponto M D"; `.claude/skills` → "ponto claude, barra skills"; `inema.club` → "inema ponto club".
+3. **Siglas e URLs (forma-fala)** — `SKILL.md` → "SKILL ponto M D"; `.claude/skills` → "ponto claude, barra skills"; `ARCKHÉ AI` → "ARCKHÉ ponto club".
 4. **Termos em inglês** — manter a grafia original **na tela**; na **forma-fala**, trocar pela grafia fonética (tabela abaixo). Na dúvida, **gerar um WAV de teste** e o usuário ouvir.
 
 ### Acentos que mais escapam (PT-BR)
@@ -28,7 +28,7 @@ inteligência · experiência · usuário · próprio · já · nêo.
 
 ## Termos em inglês → grafia fonética (forma-fala)
 
-Léxico-semente para o conteúdo INEMA (IA / dev / marketing). **Só na forma-fala** (`txt/sN.txt`);
+Léxico-semente para o conteúdo ARCKHÉ (IA / dev / marketing). **Só na forma-fala** (`txt/sN.txt`);
 na tela fica o original. Aproximações — quando nêo bater de primeira, ajustar pelo teste de WAV.
 
 | Inglês (tela) | Forma-fala (txt) | | Inglês (tela) | Forma-fala (txt) |
